@@ -1,28 +1,42 @@
-# CampusRide - College Bus Live-Tracking & Real-Time ETA System
+# CampusRide - JIT Davangere College Bus Live-Tracking System
 
-A comprehensive, production-grade real-time GPS tracking web platform built for university campuses. Designed to eliminate transit uncertainty for students, empower drivers with live telemetry tools, and give campus transit dispatchers a command center overview.
+A real-time GPS tracking web platform built for **Jain Institute of Technology (JIT), Davangere** (located near Bada Cross on PB Road / NH-48). Designed to eliminate transit uncertainty for students, empower bus drivers with live telemetry tools, and provide transit dispatchers with a command center overview.
 
 ---
 
 ## 🌟 Key Features
 
-### 🎓 1. Student Live-Tracking View
-- **Interactive Leaflet Map**: OpenStreetMap vector tiles, smooth bus movements, stop markers, and road-following polylines.
-- **Dynamic Bus Heading & Rotation**: Buses smoothly rotate to match the direction of road travel with real-time speed indicators (km/h).
-- **Intelligent Dynamic ETA Engine**: Computes realistic arrival times factoring in road distance (Haversine formula), real-time speed, upcoming stop dwell times, and live traffic conditions.
-- **Seat Occupancy Gauge**: Live student count and capacity gauge (`28 / 45 seats - 62% Occupied - Seats Available`).
-- **Proximity Notification Bell**: Audio chime and alert banner when the bus approaches within 4 minutes / 500 meters of the student's stop.
-- **Find Nearest Stop**: Automatically detects user location and pinpoints the closest campus bus stop with walking distance (km) and estimated walking time.
-- **Interactive Stop Timetable**: Timeline view of scheduled vs real-time ETA for each stop along the route.
-- **Driver Contact**: 1-tap call button to contact the on-duty driver.
+### 🎓 1. Student Live-Tracking Portal
+- **University USN Login Gate**: Secure authentication with student USN and matching password (`password === usn`) featuring 1-click test accounts (`4JD21CS045`, etc.).
+- **4 JIT Campus Routes** (5+ pickup/drop stops each):
+  1. **Route 101**: Vidyanagar to JIT Campus (near Bada Cross)
+  2. **Route 202**: BIET to JIT Campus (near Bada Cross)
+  3. **Route 303**: Harihara to JIT Campus (near Bada Cross)
+  4. **Route 404**: Channagiri to JIT Campus (near Bada Cross)
+- **College Hours Timetable (09:00 AM – 05:00 PM)**:
+  - Morning Inbound: All 4 buses arrive at campus by 08:50 AM (10 mins before classes start).
+  - Evening Return: Dispersal departures begin at 05:15 PM (15 mins after classes end).
+  - Shift switcher: Toggle between 🌅 Morning and 🌆 Evening timings.
+- **Interactive Leaflet Map**: Keyless OpenStreetMap tiles with distinct **🟢 START** and **🎓 JIT CAMPUS (END)** pins.
+- **Dynamic Bus Heading & Rotation**: Buses smoothly rotate to match road travel with speed indicators (km/h).
+- **Intelligent Dynamic ETA Engine**: Computes realistic arrival times factoring in road distance, live speed, upcoming stop dwell times, and traffic conditions.
+- **Direct Driver Mobile Calling & WhatsApp**:
+  - 1-Tap Call Driver button triggers the native smartphone phone dialer (`tel:+91...`).
+  - Quick WhatsApp chat button with pre-filled route inquiry text.
+  - 1-Click Copy Number with visual feedback.
+  - Floating Mobile Quick-Call button pinned to the bottom-right on mobile devices.
+  - Map Marker Call Button: Tap any bus on the map to call the driver directly from the popup.
+- **Seat Occupancy Gauge**: Live student count and capacity gauge (`28 / 45 seats`).
+- **Proximity Notification**: Web Audio synthesised chime and alert banner when the bus is within 4 minutes.
+- **Find Nearest Stop**: Automatically pinpoints the closest campus bus stop with walking distance (km) and walking time.
 
 ### 🚌 2. Driver Cockpit Terminal
 - **Dual GPS Transmission Modes**:
-  - **Real Device Mobile GPS**: Uses HTML5 Geolocation API (`navigator.geolocation.watchPosition`) to transmit actual smartphone GPS coordinates, accuracy, and speed to the server and all students.
-  - **Autonomous Road Simulator**: High-fidelity GPS route simulator with speed multipliers (1x, 2x, 4x, 8x) for testing without moving outside.
-- **Passenger Boarding Counter**: Large `+` and `-` buttons (plus `+5` / `-5` quick chips) to update onboard student counts in real-time.
-- **Traffic Condition Reporter**: 1-tap buttons (`Normal`, `Moderate Delay`, `Heavy Jam`) that dynamically adjust ETAs across the system.
-- **Incident Broadcast**: Instantly notify dispatchers and students of delays or vehicle issues.
+  - **Real Device Mobile GPS**: Uses HTML5 Geolocation API (`navigator.geolocation.watchPosition`) to transmit smartphone GPS coordinates.
+  - **Autonomous Road Simulator**: High-fidelity GPS route simulator with speed multipliers (1x, 2x, 4x, 8x).
+- **Passenger Boarding Counter**: `+` and `-` buttons to update student count in real-time.
+- **Traffic Condition Reporter**: 1-tap buttons (`Normal`, `Moderate Delay`, `Heavy Jam`) that adjust ETAs across the system.
+- **Incident Broadcast**: Instantly notify dispatchers and students of delays.
 
 ### 🛡️ 3. Dispatcher Admin Command Center
 - **Unified Campus Fleet Radar**: View all 4 routes and buses on a single comprehensive university map.
